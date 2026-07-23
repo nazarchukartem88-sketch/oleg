@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /office-ov
+Disallow: /office.html
+Disallow: /START-HERE.html

@@ -1,0 +1,12 @@
+{
+  "name": "Олег Вишнівецький — рієлтор у Чернівцях",
+  "short_name": "ОВ Рієлтор",
+  "description": "Купівля, продаж, оцінка та супровід угод з нерухомістю у Чернівцях.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#11130f",
+  "theme_color": "#11130f",
+  "icons": [
+    {"src":"favicon.png","sizes":"512x512","type":"image/png"}
+  ]
+}
