@@ -120,6 +120,8 @@ app.get('/api/images/:id',async(req,res)=>{const {rows}=await pool.query('select
 
 app.use(express.static(path.join(__dirname,'public')));
 app.get('/office-ov',(req,res)=>res.sendFile(path.join(__dirname,'public','office.html')));
-app.get('*',(req,res)=>res.sendFile(path.join(__dirname,'public','index.html')));
+app.use((req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 initDb().then(()=>app.listen(PORT,()=>console.log(`Server on ${PORT}`))).catch(e=>{console.error(e);process.exit(1);});
