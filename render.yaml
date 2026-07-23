@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: oleg-realtor-site
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: oleg-realtor-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ADMIN_EMAIL
+        value: admin@oleg-realtor.com
+      - key: ADMIN_PASSWORD
+        value: OlegPanel-2026!
+      - key: NODE_ENV
+        value: production
+
+databases:
+  - name: oleg-realtor-db
+    plan: free
+    databaseName: oleg_realtor
+    user: oleg_realtor
