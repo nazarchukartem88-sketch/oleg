@@ -1,16 +1,21 @@
 {
-  "name": "oleg-realtor-fullstack",
-  "version": "1.0.0",
+  "name": "oleg-realtor-final",
+  "version": "2.0.0",
   "private": true,
   "type": "commonjs",
-  "scripts": {"start":"node server.js"},
-  "engines": {"node":">=20"},
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check server.js && node --check site.js && node --check admin-app.js"
+  },
+  "engines": {
+    "node": ">=20 <27"
+  },
   "dependencies": {
-    "bcryptjs":"^3.0.2",
-    "cookie-parser":"^1.4.7",
-    "express":"^5.1.0",
-    "jsonwebtoken":"^9.0.2",
-    "multer":"^2.0.2",
-    "pg":"^8.16.3"
+    "bcryptjs": "3.0.2",
+    "cookie-parser": "1.4.7",
+    "express": "5.1.0",
+    "jsonwebtoken": "9.0.2",
+    "multer": "2.0.2",
+    "pg": "8.16.3"
   }
 }

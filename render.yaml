@@ -3,9 +3,10 @@ services:
     name: oleg-realtor-site
     runtime: node
     plan: free
-    buildCommand: npm install
+    buildCommand: npm install --omit=dev --no-audit --no-fund
     startCommand: npm start
     healthCheckPath: /api/health
+    autoDeployTrigger: commit
     envVars:
       - key: DATABASE_URL
         fromDatabase:
@@ -14,9 +15,9 @@ services:
       - key: JWT_SECRET
         generateValue: true
       - key: ADMIN_EMAIL
-        value: admin@oleg-realtor.com
+        sync: false
       - key: ADMIN_PASSWORD
-        value: OlegPanel-2026!
+        sync: false
       - key: NODE_ENV
         value: production
 
